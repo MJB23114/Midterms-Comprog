@@ -1,0 +1,40 @@
+using System;
+
+using System.Linq;
+
+
+
+namespace Test_Time;
+
+
+
+public struct Time
+{
+    private readonly int minutes;
+
+    public Time(int hh, int mm)
+    {
+        this.minutes = 60 * hh + mm;
+    }
+
+    public override string ToString()
+    {
+        return minutes.ToString();
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Time t1 = new Time(10, 5);
+        Time t2 = new Time(0, 45);
+        Time t3 = new Time(23, 59);
+
+
+        Console.WriteLine("Time 1: " + t1);
+        Console.WriteLine("Time 2: " + t2);
+        Console.WriteLine("Time 3: " + t3);
+    }
+}
+

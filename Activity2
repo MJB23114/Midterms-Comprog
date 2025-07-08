@@ -1,0 +1,34 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[,] grades = new int[5, 3];
+        string[] subjects = { "MATH", "SCIENCE", "ENGLISH" };
+
+        // Input grades
+        Console.WriteLine("Enter grades for 5 students in MATH, SCIENCE, and ENGLISH:");
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine($"Student {i + 1}:");
+            for (int j = 0; j < 3; j++)
+            {
+                Console.Write($"  {subjects[j]}: ");
+                grades[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        // Display grades matrix
+        Console.WriteLine("\nGrades Matrix:");
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write($"Student {i + 1}: ");
+            for (int j = 0; j < 3; j++)
+            {
+                Console.Write($"{subjects[j]}: {grades[i, j]}  ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
